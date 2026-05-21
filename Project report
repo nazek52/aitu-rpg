@@ -1,0 +1,241 @@
+# Project Report
+
+## Lab Horror: F-13
+
+### Survival Horror Game Developed with Python and Pygame
+
+---
+
+# 1. Problem Statement
+
+Modern game development combines multiple areas of software engineering such as object-oriented programming, artificial intelligence, event-driven systems, collision detection, animation handling, and interactive user interfaces. Developing a complete game project provides practical experience in solving real-world programming problems and designing complex software systems.
+
+The goal of this project was to design and develop a 2D survival horror game using Python and Pygame that demonstrates:
+
+* object-oriented programming principles,
+* AI behavior systems,
+* collision and interaction mechanics,
+* animation systems,
+* sound integration,
+* and overall game architecture.
+
+The project needed to provide an immersive horror atmosphere while maintaining smooth gameplay and modular code structure.
+
+The main challenge of the project was creating an intelligent monster behavior system combined with stealth mechanics, collision handling, and dynamic game states.
+
+---
+
+# 2. Solution Overview
+
+To solve the problem, we developed a complete top-down horror game called **Lab Horror: F-13**.
+
+In the game, the player explores an abandoned underground laboratory while being hunted by a dangerous experimental creature known as F-13. The player must collect important items, avoid the monster, restore power, hide when necessary, and survive long enough to complete the objectives.
+
+The game was implemented using:
+
+* Python as the main programming language,
+* Pygame for graphics, input handling, rendering, and audio systems,
+* Pillow (PIL) for GIF and image processing.
+
+The project uses an object-oriented structure where the game logic is divided into separate classes and systems:
+
+* `Game`
+* `Player`
+* `Monster`
+* `Item`
+* `Door`
+* `Note`
+
+The gameplay includes:
+
+* player movement,
+* directional animations,
+* inventory system,
+* interaction system,
+* monster AI,
+* stealth mechanics,
+* collision detection,
+* sound effects,
+* animated splash screens,
+* and dynamic game states.
+
+The monster AI system was one of the most important parts of the project. The monster can patrol the environment, detect the player, chase the player, search for the player after losing visibility, and return to patrol mode. This creates tension and unpredictable gameplay behavior.
+
+The game also includes interactive environmental systems such as:
+
+* locked rooms,
+* collectible quest items,
+* hiding spots,
+* notes and documents,
+* warning effects,
+* and audio feedback systems.
+
+---
+
+# 3. System Design
+
+The project follows a modular object-oriented architecture.
+
+Main components of the system:
+
+```text
+Main Loop
+   │
+   ├── Game Manager
+   │      ├── Player System
+   │      ├── Monster AI System
+   │      ├── Inventory System
+   │      ├── Collision System
+   │      ├── Interaction System
+   │      ├── Audio System
+   │      └── Rendering System
+   │
+   ├── Map and Environment
+   │      ├── Walls
+   │      ├── Doors
+   │      ├── Hiding Spots
+   │      └── Collectible Objects
+   │
+   └── UI and Screens
+          ├── Splash Screen
+          ├── Main Gameplay
+          └── Victory Screen
+```
+
+The project uses the standard game loop architecture:
+
+```python id="f08y3o"
+while running:
+    handle_events()
+    update()
+    draw()
+```
+
+This loop continuously:
+
+* processes user input,
+* updates game logic,
+* updates animations,
+* and renders the game world.
+
+Object-oriented programming principles were actively used throughout the project:
+
+* encapsulation,
+* abstraction,
+* polymorphism,
+* modular architecture.
+
+Iterators are used extensively through loops that process items, notes, walls, and game entities.
+
+---
+
+# 4. Challenges Faced During Development
+
+Several technical challenges were encountered during development.
+
+## Collision Detection
+
+One of the most difficult parts was creating accurate collision detection for walls and rooms. The player and monster needed to move naturally without clipping through objects or becoming stuck.
+
+This problem was solved using collision masks and blocked movement zones based on map collision images.
+
+---
+
+## Monster AI Behavior
+
+Designing the monster AI required balancing difficulty and gameplay fairness. Initially, the monster behavior was either too aggressive or too passive.
+
+To solve this issue:
+
+* chase states,
+* search timers,
+* visibility checks,
+* and movement logic
+
+were redesigned multiple times until the gameplay became balanced and enjoyable.
+
+---
+
+## Animation Synchronization
+
+Synchronizing movement with directional animation frames created additional complexity. Different animations needed to update correctly depending on:
+
+* player direction,
+* monster direction,
+* movement speed,
+* and game state.
+
+Frame indexing systems and animation timing logic were implemented to solve this issue.
+
+---
+
+## Audio Management
+
+Managing multiple sounds simultaneously was another challenge. Ambient sounds, chase effects, heartbeat effects, and menu music needed to transition correctly without overlapping incorrectly.
+
+The solution involved separating sound states and dynamically enabling or disabling audio depending on the current game state.
+
+---
+
+## GitHub Collaboration and Merge Conflicts
+
+During development, multiple Git merge conflicts occurred because several files were edited simultaneously on different versions of the project.
+
+This challenge improved understanding of:
+
+* version control,
+* Git branching,
+* merge conflict resolution,
+* and collaborative software development workflows.
+
+---
+
+# 5. Team Contributions
+
+## Nazerke — Main Developer and Gameplay Programmer
+
+Responsibilities included:
+
+* core gameplay systems,
+* player movement,
+* monster AI behavior,
+* collision system,
+* hiding mechanics,
+* inventory and interaction systems,
+* UI and game states,
+* sound integration,
+* debugging and optimization,
+* GitHub project management.
+
+---
+
+## Second Team Member — Support Developer and Testing
+
+Responsibilities included:
+
+* gameplay testing,
+* balancing feedback,
+* asset support,
+* map support,
+* debugging assistance,
+* collaboration through GitHub.
+
+---
+
+# 6. Conclusion
+
+Lab Horror: F-13 successfully demonstrates practical implementation of software engineering and game development concepts using Python and Pygame.
+
+The project combines:
+
+* object-oriented programming,
+* AI systems,
+* event-driven architecture,
+* collision detection,
+* animation systems,
+* audio integration,
+* and interactive gameplay mechanics.
+
+The development process significantly improved practical programming skills, debugging ability, teamwork experience, and understanding of software architecture.
+
+The final result is a fully functional survival horror game that demonstrates both technical implementation and creative game design.
