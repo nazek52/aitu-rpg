@@ -1,0 +1,387 @@
+# LAB HORROR: F-13
+
+## Survival Horror Game in Python & Pygame
+
+---
+
+# Project Overview
+
+Lab Horror: F-13 is a 2D top-down survival horror game developed using Python and Pygame. The player explores an abandoned underground laboratory while being hunted by a dangerous experimental creature known as F-13.
+
+The objective of the game is to survive, explore the laboratory, collect important items, restore power, avoid the monster, and escape the facility.
+
+The project combines horror atmosphere, stealth mechanics, AI behavior, inventory systems, collision detection, animations, and interactive gameplay elements.
+
+---
+
+# Main Features
+
+## Player System
+
+* Smooth movement system
+* Directional animations
+* Collision detection
+* Interaction system
+* Hiding mechanics
+
+## Monster AI
+
+* Dynamic chase behavior
+* Patrol and search states
+* Vision detection
+* Obstacle-aware movement
+* Search mode after losing the player
+* Multiple AI states:
+
+  * Idle
+  * Patrol
+  * Chase
+  * Search
+
+## Laboratory Environment
+
+* Large explorable map
+* Multiple rooms and corridors
+* Locked areas and progression system
+* Collision map system
+* Interactive environment
+
+## Inventory System
+
+* Item collection
+* Quest items
+* Keycards
+* Reagents
+* Notes and documents
+
+## Audio and Atmosphere
+
+* Ambient laboratory sounds
+* Chase audio effects
+* Heartbeat system
+* Warning effects
+* Main menu music
+* Victory screen
+
+## Stealth Mechanics
+
+* Hiding locations
+* Monster detection system
+* Temporary safety while hidden
+
+---
+
+# Technologies Used
+
+| Technology                  | Purpose                           |
+| --------------------------- | --------------------------------- |
+| Python                      | Main programming language         |
+| Pygame                      | Game development library          |
+| Pillow (PIL)                | GIF and image processing          |
+| Git & GitHub                | Version control and collaboration |
+| Object-Oriented Programming | Software architecture             |
+
+---
+
+# Object-Oriented Programming Principles
+
+## Encapsulation
+
+The project uses encapsulation by storing data and behavior inside classes.
+
+Main classes include:
+
+* `Game`
+* `Player`
+* `Monster`
+* `Item`
+
+Each class manages its own attributes and methods independently.
+
+Example:
+
+```python id="r2o2l0"
+class Player:
+    def __init__(self):
+        self.x = 100
+        self.y = 100
+        self.speed = 4
+```
+
+---
+
+## Abstraction
+
+Complex systems are hidden behind simple methods.
+
+Examples:
+
+```python id="jtmv9k"
+update()
+draw()
+move()
+interact()
+```
+
+This makes the project easier to maintain and expand.
+
+---
+
+## Polymorphism
+
+Different classes implement similar methods in different ways.
+
+Example:
+
+```python id="ez4xfv"
+player.draw(screen)
+monster.draw(screen)
+item.draw(screen)
+```
+
+All objects can be drawn, but each behaves differently.
+
+---
+
+## Inheritance
+
+The project architecture supports reusable entity systems and can be extended using base entity classes.
+
+Example:
+
+```python id="8z7keb"
+class Entity:
+    pass
+
+class Player(Entity):
+    pass
+```
+
+---
+
+# Main Systems
+
+## Main Game Loop
+
+The game uses the standard Pygame loop:
+
+```python id="5z0kkv"
+while running:
+    handle_events()
+    update()
+    draw()
+```
+
+The loop continuously:
+
+* handles user input,
+* updates game logic,
+* renders graphics,
+* updates animations.
+
+---
+
+## Collision Detection
+
+The game uses collision masks and blocked movement zones to prevent the player from moving through walls and objects.
+
+The system checks whether movement is valid before updating the player's position.
+
+---
+
+## Monster AI Logic
+
+The monster can:
+
+* patrol the environment,
+* detect the player,
+* chase the player,
+* lose the player,
+* search for a limited time,
+* return to patrol behavior.
+
+This system creates tension and unpredictable gameplay.
+
+---
+
+## Audio System
+
+The project includes:
+
+* menu music,
+* ambient sounds,
+* chase sounds,
+* heartbeat effects,
+* warning sounds.
+
+Audio changes dynamically depending on the current game state.
+
+---
+
+# Iterators and Generators
+
+## Iterator Usage
+
+The project uses iterators in loops such as:
+
+```python id="st9du8"
+for item in self.items:
+    item.draw(screen)
+```
+
+Iterators are used to process:
+
+* items,
+* walls,
+* animation frames,
+* game objects.
+
+---
+
+## Generator Example
+
+Generators can be used for animation systems.
+
+Example:
+
+```python id="7g6b1j"
+def frame_generator(frames):
+    while True:
+        for frame in frames:
+            yield frame
+```
+
+This allows efficient frame-by-frame animation handling.
+
+---
+
+# Decorator Example
+
+Decorators can be used for debugging and logging.
+
+Example:
+
+```python id="0r8td7"
+def debug_action(func):
+    def wrapper(*args, **kwargs):
+        print("Action started")
+        result = func(*args, **kwargs)
+        print("Action finished")
+        return result
+    return wrapper
+```
+
+---
+
+# Project Structure
+
+```bash id="vxq8l7"
+LabHorror/
+│
+├── assets/
+│   ├── images/
+│   ├── sounds/
+│   └── maps/
+│
+├── core/
+│   └── game.py
+│
+├── entities/
+│   ├── player.py
+│   ├── monster.py
+│   └── item.py
+│
+├── settings.py
+├── main.py
+└── README.md
+```
+
+---
+
+# Team Members
+
+## Nazerke
+
+Main Developer and Gameplay Programmer
+
+Responsibilities:
+
+* gameplay systems,
+* monster AI,
+* collision detection,
+* inventory system,
+* hiding mechanics,
+* interaction logic,
+* UI and game states,
+* sound integration,
+* debugging and optimization.
+
+---
+
+## Second Team Member
+
+Support Developer and Testing
+
+Responsibilities:
+
+* asset support,
+* testing,
+* balancing,
+* gameplay feedback,
+* map assistance,
+* GitHub collaboration.
+
+---
+
+# Educational Value
+
+This project demonstrates practical implementation of:
+
+* Object-Oriented Programming,
+* AI systems,
+* event-driven programming,
+* collision detection,
+* animation systems,
+* game architecture,
+* debugging techniques,
+* sound integration,
+* software collaboration using Git.
+
+---
+
+# Challenges During Development
+
+During development, several technical challenges were solved:
+
+* collision system bugs,
+* AI behavior balancing,
+* animation synchronization,
+* sound management,
+* interaction detection,
+* game state management,
+* optimization issues.
+
+These challenges improved both programming and problem-solving skills.
+
+---
+
+# Future Improvements
+
+Possible future updates include:
+
+* advanced pathfinding,
+* save/load system,
+* multiplayer mode,
+* improved lighting,
+* additional monsters,
+* extended storyline,
+* puzzle system,
+* cinematic cutscenes.
+
+---
+
+# Conclusion
+
+Lab Horror: F-13 is a complete survival horror project developed using Python and Pygame. The project demonstrates practical game development skills, object-oriented programming principles, AI behavior systems, and interactive gameplay design.
+
+The development process improved teamwork, software architecture understanding, debugging skills, and overall programming experience.
